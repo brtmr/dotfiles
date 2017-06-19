@@ -1,0 +1,20 @@
+# allow M-p M-n M-↑ M-↓ to search history with left-of-cursor as pattern
+"\ep": history-search-backward
+"\en": history-search-forward
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+set completion-ignore-case on
+set completion-prefix-display-length 2
+set completion-map-case on
+
+# "faster" completion
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+
+# quiet
+set bell-style none
+
+set visible-stats on
+
+"\M-s": menu-complete
