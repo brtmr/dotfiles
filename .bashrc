@@ -119,6 +119,7 @@ export WORKON_HOME="/home/basti/.virtualenvs"
 export HISTSIZE=""
 
 export PATH="$HOME/.cargo/bin/:$PATH"
+export PATH="$HOME/node-v6.9.4-linux-x64/bin:$PATH"
 export PATH="$HOME/bin/:$PATH"
 
 iypthon() {
