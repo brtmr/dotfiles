@@ -121,6 +121,9 @@ export HISTSIZE=""
 export PATH="$HOME/.cargo/bin/:$PATH"
 export PATH="$HOME/node-v6.9.4-linux-x64/bin:$PATH"
 export PATH="$HOME/bin/:$PATH"
+if which ruby >/dev/null && which gem >/dev/null; then
+    export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
 
 iypthon() {
     echo "will you ever learn?"
@@ -142,3 +145,10 @@ texwatch() {
 # for storing dotfiles in a git repo.
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 
+vimify () {
+    # for opening the output of a command in vim
+    vim <(bash -c "$*")
+}
+
+alias rotor='python3 /home/basti/code/rotor/rotor.py'
+alias vim='vim -p'
