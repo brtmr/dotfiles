@@ -124,6 +124,7 @@ export PATH="$HOME/bin/:$PATH"
 if which ruby >/dev/null && which gem >/dev/null; then
     export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
+export PATH="$HOME/.local/bin:$PATH"
 
 iypthon() {
     echo "will you ever learn?"
@@ -139,7 +140,7 @@ texwatch() {
     local pdf=$(sed -e 's/tex$/pdf/' <(echo $1))
     mupdf "$pdf" &
     local pid=$!
-    echo $1 | entr bash -c "pdflatex -halt-on-error \"$1\"; kill -1 $pid"
+    echo $1 | entr bash -c "lualatex -halt-on-error \"$1\"; kill -1 $pid"
 }
 
 # for storing dotfiles in a git repo.
