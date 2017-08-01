@@ -164,6 +164,7 @@ bar {
 
 exec --no-startup-id owncloud
 exec --no-startup-id python3 /home/basti/code/rotor/rotor.py
+exec --no-startup-id dunst
 
 bindsym XF86AudioRaiseVolume exec sh -c 'pactl set-sink-volume 0 +5% && notify-send "Volume: $(pactl list sinks | grep Volume | \grep -Eo '[0-9]+%' | head -n1)"'
 bindsym XF86AudioLowerVolume exec sh -c 'pactl set-sink-volume 0 -5% && notify-send "Volume: $(pactl list sinks | grep Volume | \grep -Eo '[0-9]+%' | head -n1)"'
@@ -184,3 +185,15 @@ client.focused #586e75 #ffffff #fdf6e3 #ffffff
 client.focused_inactive #073642 #073642 #93a1a1 #002b36
 client.unfocused #002b36 #002b36 #586e75 #002b36
 client.urgent #dc322f #dc322f #fdf6e3 #dc322f
+
+# assign workspaces to specific monitors.
+workspace 1 output DVI-D-0
+workspace 2 output DVI-D-0
+workspace 3 output DVI-D-0
+workspace 4 output DVI-D-0
+workspace 5 output DVI-D-0
+workspace 6 output HDMI-A-0
+workspace 7 output HDMI-A-0
+workspace 8 output HDMI-A-0
+workspace 9 output HDMI-A-0
+workspace 10 output HDMI-A-0
