@@ -18,6 +18,7 @@ Plugin 'ScrollColors'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-surround'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -39,6 +40,9 @@ set cursorline
 set background=dark
 colorscheme molokai
 syn on
+set showcmd
+
+" space as leader
 
 map <C-Left> <Esc>:tabprev<CR>
 map <C-Right> <Esc>:tabnext<CR>
@@ -61,3 +65,27 @@ let g:airline_theme="luna"
 set mouse=a
 set incsearch
 set hlsearch
+
+" ========= [no trailing whitespace in python and javascript] ===============
+function! TrimWhiteSpace()
+    %s/\s*$//e
+    ''
+endfunction
+autocmd BufWritePre *.js call TrimWhiteSpace()
+autocmd BufWritePre *.py call TrimWhiteSpace()
+
+" so that the preview window for YCM opens at the bottom,
+" and with a fixed size.
+set splitbelow
+" ugly workaroung to set a previewheight greater than 3:
+" when entering a new buffer, check whether this is a preview buffer and if
+" so, set its size to previewheight.
+set previewheight=10
+au BufEnter ?* call PreviewHeightWorkAround()
+function! PreviewHeightWorkAround()
+    if &previewwindow
+        exec 'setlocal winheight='.&previewheight
+    endif
+endfunc
+nnoremap <F2>   :YcmCompleter GetDoc<CR>
+
