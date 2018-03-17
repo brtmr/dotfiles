@@ -19,6 +19,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-surround'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -43,6 +44,7 @@ syn on
 set showcmd
 
 " space as leader
+let mapleader = "\<Space>"
 
 map <C-Left> <Esc>:tabprev<CR>
 map <C-Right> <Esc>:tabnext<CR>
@@ -89,3 +91,10 @@ function! PreviewHeightWorkAround()
 endfunc
 nnoremap <F2>   :YcmCompleter GetDoc<CR>
 
+" ========= [ swap and backup files in a central location ] ==================
+" this prevents vim from cluttering up my projects folder.
+set directory=$HOME/.vim/swapfiles//
+set backupdir=$HOME/.vim/backups//
+
+
+nnoremap <F3> :TagbarOpenAutoClose<CR>
