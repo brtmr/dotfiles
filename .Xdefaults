@@ -30,7 +30,7 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
-URxvt.font:         xft:Iosevka Term Slab:size=11:antialias=true
+URxvt.font:         xft:Terminess Powerline:size=13:antialias=true
 
 
 URxvt.saveLines: 2000
@@ -49,7 +49,7 @@ URxvt.keysym.Control-Right: \033[1;5C
 URxvt.transparent:   true
 URxvt.shading:       20
 
-URxvt.perl-ext-common: ...,font-size
+URxvt.perl-ext-common: default,matcher,resize-font
 URxvt.keysym.C-+:     font-size:increase
 URxvt.keysym.C--:   font-size:decrease
 
