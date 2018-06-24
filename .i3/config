@@ -174,10 +174,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute s
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
-
 gaps inner 7
 gaps outer 0
-smart_gaps on
+# smart_gaps on
 smart_borders on
 
 for_window [class="^.*"] border pixel 1
@@ -199,4 +198,8 @@ workspace 3 output DVI-D-0
 workspace 4 output DVI-D-0
 workspace 5 output DVI-D-0
 
-exec --no-startup-id compton --backend glx --vsync opengl -c --xrender-sync --xrender-sync-fence
+exec_always --no-startup-id compton --backend xr_glx_hybrid --vsync opengl -c --xrender-sync --glx-swap-method 3
+exec_always --no-startup-id setxkbmap us
+
+exec_always --no-startup-id setxkbmap -option compose:menu
+exec_always --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
