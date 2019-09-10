@@ -17,9 +17,13 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'ScrollColors'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
 Plugin 'majutsushi/tagbar'
+Plugin 'ElmCast/elm-vim'
+Plugin 'tommcdo/vim-exchange'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -98,3 +102,5 @@ set backupdir=$HOME/.vim/backups//
 
 
 nnoremap <F3> :TagbarOpenAutoClose<CR>
+
+let g:elm_format_autosave = 1
